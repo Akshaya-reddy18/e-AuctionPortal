@@ -55,21 +55,6 @@ Create these files from the examples provided:
 - `server/.env`
 - `client/.env`
 
-### Server `.env`
-
-```
-PORT=5000
-MONGO_URI=mongodb+srv://kondamwarakshaya1810_db_user:yRY1nI0QAeO863Mw@auction.afozaio.mongodb.net/auction_platform?retryWrites=true&w=majority
-JWT_SECRET=your_jwt_secret_here
-CLIENT_URL=http://localhost:5173
-```
-
-### Client `.env`
-
-```
-VITE_API_URL=http://localhost:5000/api
-```
-
 ## Install Commands
 
 Run these inside each folder:
