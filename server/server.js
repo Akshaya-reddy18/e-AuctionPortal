@@ -14,21 +14,9 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 
-// Support multiple allowed origins via ALLOWED_ORIGINS or single CLIENT_URL.
-const rawAllowed = process.env.ALLOWED_ORIGINS || process.env.CLIENT_URL || 'http://localhost:5173';
-const allowedOrigins = rawAllowed.split(',').map((s) => s.trim()).filter(Boolean);
-console.log('Allowed CORS origins:', allowedOrigins);
-
 app.use(
   cors({
-    origin: function (origin, callback) {
-      // allow non-browser requests (e.g., curl, server-to-server)
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.indexOf(origin) !== -1) {
-        return callback(null, true);
-      }
-      return callback(new Error('Not allowed by CORS'));
-    },
+    origin: true,
     credentials: true,
   })
 );
